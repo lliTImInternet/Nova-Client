@@ -1,0 +1,60 @@
+{
+  "namespace": "pause",
+  "pause_screen@common.base_screen": {
+      "$screen_animations": [
+          "@common.screen_exit_animation_push_fade",
+          "@common.screen_exit_animation_pop_fade",
+          "@common.screen_entrance_animation_push_fade",
+          "@common.screen_entrance_animation_pop_fade"
+      ],
+      "button_mappings": [
+          {
+              "from_button_id": "button.menu_cancel",
+              "mapping_type": "global",
+              "to_button_id": "button.menu_continue"
+          },
+          {
+              "from_button_id": "button.controller_start",
+              "mapping_type": "global",
+              "to_button_id": "button.menu_continue"
+          },
+          {
+              "from_button_id": "button.menu_vr_realign",
+              "mapping_type": "global",
+              "scope": "controller",
+              "to_button_id": "button.menu_vr_realign"
+          },
+          {
+              "from_button_id": "button.controller_select",
+              "mapping_type": "global",
+              "scope": "controller",
+              "to_button_id": "button.to_profile_or_skins_screen"
+          },
+          {
+              "from_button_id": "button.menu_tab_left",
+              "mapping_type": "global",
+              "scope": "view",
+              "to_button_id": "button.menu_tab_left"
+          },
+          {
+              "from_button_id": "button.menu_tab_right",
+              "mapping_type": "global",
+              "scope": "view",
+              "to_button_id": "button.menu_tab_right"
+          }
+      ],
+      "cache_screen": true,
+      "force_render_below": true,
+      "variables": [
+          {
+              "$screen_bg_content": "",
+              "$screen_content": "hacking_menu_pause.basis",
+              "requires": "$ignore_edu_pause"
+          },
+          {
+              "$screen_content": "edu_pause.pause_screen_content",
+              "requires": "(not $ignore_edu_pause)"
+          }
+      ]
+  }
+}

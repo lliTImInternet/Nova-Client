@@ -1,0 +1,103 @@
+{
+    "namespace": "invis_toggle",
+    "invisible_toggle@common.toggle": {
+        "$checked_control": "invis_toggle.toggle_invis",
+        "$checked_hover_control": "invis_toggle.toggle_invis",
+        "$unchecked_control": "invis_toggle.toggle_invis",
+        "$unchecked_hover_control": "invis_toggle.toggle_invis",
+        "button_mappings": "$button_mappings",
+        "toggle_default_state": "$toggle_tags",
+        "$button_mappings|default": [
+            {
+                "from_button_id": "button.menu_select",
+                "mapping_type": "pressed",
+                "to_button_id": "button.menu_select"
+            },
+            {
+                "from_button_id": "button.menu_ok",
+                "mapping_type": "focused",
+                "to_button_id": "button.menu_ok"
+            },
+            {
+                "from_button_id": "button.menu_left",
+                "ignored": "(not $enable_directional_toggling)",
+                "input_mode_condition": "gamepad_and_not_gaze",
+                "mapping_type": "pressed",
+                "to_button_id": "$toggle_off_button"
+            },
+            {
+                "from_button_id": "button.menu_right",
+                "ignored": "(not $enable_directional_toggling)",
+                "input_mode_condition": "gamepad_and_not_gaze",
+                "mapping_type": "pressed",
+                "to_button_id": "$toggle_on_button"
+            },
+            {
+                "ignored": "(not $enable_hover_event_mapping)",
+                "mapping_type": "pressed",
+                "to_button_id": "$toggle_hover_event_mapping"
+            }
+        ]
+    },
+    "toggle_invis@invis_toggle.panel": {
+        "type": "image",
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "layer": 1,
+        "alpha": 0.0,
+        "texture": "textures/hackingmenu/toggles/button_hover"
+    },
+    "invis_toggle": {
+        "type": "panel",
+        "layer": 3,
+        "$toggle_view_binding_name|default": "this_toggle",
+        "$template_toggle|default": "invis_toggle.invisible_toggle",
+        "controls": [
+            {
+                "$toggle_view_binding_name@$template_toggle": {}
+            }
+        ]
+    },
+    "panel": {
+        "type": "panel",
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "layer": 30,
+        "$button_content|default": "invis_toggle.button_text",
+        "controls": [
+            {
+                "button_content@$button_content": {
+                    "layer": 10
+                }
+            },
+            {
+                "button_texture@$button_texture": {
+                    "layer": 1
+                }
+            }
+        ]
+    },
+    "button_text": {
+        "type": "label",
+        "size": [
+            "default",
+            "default"
+        ],
+        "color": [
+            0.75,
+            0.75,
+            0.75
+        ],
+        "font_type": "smooth",
+        "text": "$button_text",
+        "bindings": [
+            {
+                "binding_name": "$button_text"
+            }
+        ]
+    }
+}

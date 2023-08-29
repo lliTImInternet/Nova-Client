@@ -1,0 +1,30 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.bow_indicator": {
+      "geometry": "geometry.bow",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "ignore_lighting": true,
+      "textures": [
+        "Array.bow_indicator[query.item_is_charged(0) ? 3 : (query.get_animation_frame(variable.bow_indicator))]"
+      ],
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "light_color_multiplier": 1.0,
+      "arrays": {
+        "textures": {
+          "Array.bow_indicator": [
+            "Texture.stage_0",
+            "Texture.stage_1",
+            "Texture.stage_2",
+            "Texture.stage_3"
+          ]
+        }
+      }
+    }
+  }
+}

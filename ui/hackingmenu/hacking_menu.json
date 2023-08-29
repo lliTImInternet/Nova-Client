@@ -1,0 +1,353 @@
+{
+  "namespace": "hacking_menu",
+  "open_hacking_menu@invis_toggle.invis_toggle": {
+    "$button_text": "",
+    "$toggle_view_binding_name": "hacking_menu_screen",
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "layer": 8,
+    "size": [
+      22,
+      22
+    ],
+    "offset": [
+      54,
+      0
+    ],
+    "$button_mappings": [
+      {
+        "from_button_id": "button.menu_select",
+        "mapping_type": "double_pressed",
+        "to_button_id": "button.hacking_menu_screen"
+      }
+    ]
+  },
+  "hackingmenu": {
+    "type": "panel",
+    "offset":[0, "-40%"],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "hacking_menu_screen",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "combat": {
+          "type": "stack_panel",
+          "orientation": "vertical",
+          "controls": [
+            {
+              "header": {
+                "type": "image",
+                "texture": "textures/hackingmenu/toggles/button_pressed",
+                "alpha": 0.5,
+                "layer": 1,
+                "size": [
+                  100,
+                  20
+                ],
+                "controls": [
+                  {
+                    "label": {
+                      "type": "label",
+                      "text": "Combat",
+                      "font_type": "smooth",
+                      "size": [
+                        "default",
+                        "default"
+                      ],
+                      "font_scale_factor": 1,
+                      "layer": 2
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "bow@hacking_menu_button.hacking_menu_toggle": {
+                "$button_text": "Bow indicator",
+                "font_scale_factor": 0.5,
+                "size": [
+                  100,
+                  20
+                ],
+                "$toggle_view_binding_name": "bow_indicator_module"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "visual": {
+          "type": "stack_panel",
+          "orientation": "vertical",
+          "offset": [
+            102,
+            0
+          ],
+          "controls": [
+            {
+              "header": {
+                "type": "image",
+                "texture": "textures/hackingmenu/toggles/button_pressed",
+                "alpha": 0.5,
+                "layer": 1,
+                "size": [
+                  100,
+                  20
+                ],
+                "controls": [
+                  {
+                    "label": {
+                      "type": "label",
+                      "text": "Visual",
+                      "font_type": "smooth",
+                      "size": [
+                        "default",
+                        "default"
+                      ],
+                      "font_scale_factor": 1,
+                      "layer": 2
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "mod_test@hacking_menu_button.hacking_menu_toggle": {
+                "$button_text": "Test",
+                "font_scale_factor": 0.5,
+                "size": [
+                  100,
+                  20
+                ],
+                "$toggle_view_binding_name": "test_module"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "movement": {
+          "type": "stack_panel",
+          "orientation": "vertical",
+          "offset": [
+            204,
+            0
+          ],
+          "controls": [
+            {
+              "header": {
+                "type": "image",
+                "texture": "textures/hackingmenu/toggles/button_pressed",
+                "alpha": 0.5,
+                "layer": 1,
+                "size": [
+                  100,
+                  20
+                ],
+                "controls": [
+                  {
+                    "label": {
+                      "type": "label",
+                      "text": "Movement",
+                      "font_type": "smooth",
+                      "size": [
+                        "default",
+                        "default"
+                      ],
+                      "font_scale_factor": 1,
+                      "layer": 2
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "mod_test@hacking_menu_button.hacking_menu_toggle": {
+                "$button_text": "Test",
+                "font_scale_factor": 0.5,
+                "size": [
+                  100,
+                  20
+                ],
+                "$toggle_view_binding_name": "test_module"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "player": {
+          "type": "stack_panel",
+          "orientation": "vertical",
+          "offset": [
+            306,
+            0
+          ],
+          "controls": [
+            {
+              "header": {
+                "type": "image",
+                "texture": "textures/hackingmenu/toggles/button_pressed",
+                "alpha": 0.5,
+                "layer": 1,
+                "size": [
+                  100,
+                  20
+                ],
+                "controls": [
+                  {
+                    "label": {
+                      "type": "label",
+                      "text": "Player",
+                      "font_type": "smooth",
+                      "size": [
+                        "default",
+                        "default"
+                      ],
+                      "font_scale_factor": 1,
+                      "layer": 2
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "mod_test@hacking_menu_button.hacking_menu_toggle": {
+                "$button_text": "Test",
+                "font_scale_factor": 0.5,
+                "size": [
+                  100,
+                  20
+                ],
+                "$toggle_view_binding_name": "test_module"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "world": {
+          "type": "stack_panel",
+          "orientation": "vertical",
+          "offset": [
+            408,
+            0
+          ],
+          "controls": [
+            {
+              "header": {
+                "type": "image",
+                "texture": "textures/hackingmenu/toggles/button_pressed",
+                "alpha": 0.5,
+                "layer": 1,
+                "size": [
+                  100,
+                  20
+                ],
+                "controls": [
+                  {
+                    "label": {
+                      "type": "label",
+                      "text": "World",
+                      "font_type": "smooth",
+                      "size": [
+                        "default",
+                        "default"
+                      ],
+                      "font_scale_factor": 1,
+                      "layer": 2
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "mod_test@hacking_menu_button.hacking_menu_toggle": {
+                "$button_text": "Test",
+                "font_scale_factor": 0.5,
+                "size": [
+                  100,
+                  20
+                ],
+                "$toggle_view_binding_name": "test_module"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "gui": {
+          "type": "stack_panel",
+          "orientation": "vertical",
+          "offset": [
+            510,
+            0
+          ],
+          "controls": [
+            {
+              "header": {
+                "type": "image",
+                "texture": "textures/hackingmenu/toggles/button_pressed",
+                "alpha": 0.5,
+                "layer": 1,
+                "size": [
+                  100,
+                  20
+                ],
+                "controls": [
+                  {
+                    "label": {
+                      "type": "label",
+                      "text": "Gui",
+                      "font_type": "smooth",
+                      "size": [
+                        "default",
+                        "default"
+                      ],
+                      "font_scale_factor": 1,
+                      "layer": 2
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "mod_test@hacking_menu_button.hacking_menu_toggle": {
+                "$button_text": "Test",
+                "font_scale_factor": 0.5,
+                "size": [
+                  100,
+                  20
+                ],
+                "$toggle_view_binding_name": "test_module"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "basis": {
+    "type": "panel",
+    "controls": [
+      {
+        "@hacking_menu.open_hacking_menu": {}
+      },
+      {
+        "@hacking_menu.leave": {}
+      },
+      {
+        "@hacking_menu.hackingmenu": {}
+      }
+    ]
+  },
+  "full_screen": {
+    "type": "panel",
+    "controls": []
+  }
+}

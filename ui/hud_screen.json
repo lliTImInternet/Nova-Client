@@ -1,0 +1,142 @@
+{
+    "namespace": "hud",
+    "hud_content": {
+        "$hud_player_rend_desktop_offset|default": [
+            15,
+            15
+        ],
+        "$hud_size": [
+            "100%",
+            "100%"
+        ],
+        "controls": [
+            {
+                "root_panel@hud.root_panel": {}
+            },
+            {
+                "camera_renderer@camera_renderer": {}
+            },
+            {
+                "1@hacking_menu.basis": {}
+            },
+            {
+                "2@module_list.basis": {}
+            }
+        ],
+        "size": "$hud_size",
+        "type": "panel",
+        "variables": [
+            {
+                "$hud_player_rend_desktop_offset": [
+                    100,
+                    50
+                ],
+                "requires": "($is_holographic and not $is_living_room_mode)"
+            },
+            {
+                "$hud_size": [
+                    "90%",
+                    "100%"
+                ],
+                "requires": "($compress_hud_width)"
+            }
+        ]
+    },
+    "hud_screen@common.base_screen": {
+        "$screen_animations": [
+            "@common.screen_exit_animation_push_fade",
+            "@common.screen_exit_animation_pop_fade",
+            "@common.screen_entrance_animation_push_fade",
+            "@common.screen_entrance_animation_pop_fade"
+        ],
+        "$screen_content": "hud.hud_content",
+        "absorbs_input": false,
+        "always_accepts_input": true,
+        "button_mappings": [
+            {
+                "from_button_id": "button.scoreboard",
+                "mapping_type": "global",
+                "to_button_id": "button.scoreboard"
+            },
+            {
+                "from_button_id": "button.inventory_left",
+                "mapping_type": "global",
+                "to_button_id": "button.hotbar_inventory_left"
+            },
+            {
+                "from_button_id": "button.inventory_right",
+                "mapping_type": "global",
+                "to_button_id": "button.hotbar_inventory_right"
+            },
+            {
+                "from_button_id": "button.hide_gui",
+                "mapping_type": "global",
+                "to_button_id": "button.hide_gui_all"
+            },
+            {
+                "from_button_id": "button.hide_tooltips",
+                "mapping_type": "global",
+                "to_button_id": "button.hide_tooltips_hud"
+            },
+            {
+                "from_button_id": "button.hide_paperdoll",
+                "mapping_type": "global",
+                "to_button_id": "button.hide_paperdoll_hud"
+            },
+            {
+                "from_button_id": "button.slot1",
+                "mapping_type": "global",
+                "to_button_id": "button.slot_1"
+            },
+            {
+                "from_button_id": "button.slot2",
+                "mapping_type": "global",
+                "to_button_id": "button.slot_2"
+            },
+            {
+                "from_button_id": "button.slot3",
+                "mapping_type": "global",
+                "to_button_id": "button.slot_3"
+            },
+            {
+                "from_button_id": "button.slot4",
+                "mapping_type": "global",
+                "to_button_id": "button.slot_4"
+            },
+            {
+                "from_button_id": "button.slot5",
+                "mapping_type": "global",
+                "to_button_id": "button.slot_5"
+            },
+            {
+                "from_button_id": "button.slot6",
+                "mapping_type": "global",
+                "to_button_id": "button.slot_6"
+            },
+            {
+                "from_button_id": "button.slot7",
+                "mapping_type": "global",
+                "to_button_id": "button.slot_7"
+            },
+            {
+                "from_button_id": "button.slot8",
+                "mapping_type": "global",
+                "to_button_id": "button.slot_8"
+            },
+            {
+                "from_button_id": "button.slot9",
+                "mapping_type": "global",
+                "to_button_id": "button.slot_9"
+            },
+            {
+                "from_button_id": "button.slot0",
+                "mapping_type": "global",
+                "to_button_id": "button.slot_0"
+            }
+        ],
+        "is_showing_menu": false,
+        "low_frequency_rendering": true,
+        "send_telemetry": false,
+        "should_steal_mouse": true
+    }
+}
