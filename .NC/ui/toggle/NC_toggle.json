@@ -1,0 +1,139 @@
+{
+    "namespace": "Nova_client_toggles",
+    "tab_toggles@Nova_client_toggles.Nova_client_toggle": {
+        "$radio_toggle_group": true,
+        "$toggle_group_default_selected": 0,
+        "$toggle_name": "section_tab",
+        "$toggle_tab_focus_binding_name": "#section_tab_focus_precedence",
+        "$toggle_tab_focus_binding_type": "global",
+        "$toggle_on_hover_binding_type": "global",
+        "$toggle_on_hover_binding_name": "#toggle_on_hover"
+    },
+    "mod_toggle@common.toggle": {
+        "$checked_control": "Nova_client_toggles.toggle",
+        "$checked_hover_control": "Nova_client_toggles.toggle_hover",
+        "$unchecked_control": "Nova_client_toggles.toggle_unchecked",
+        "$unchecked_hover_control": "Nova_client_toggles.toggle_unchecked_hover",
+        "button_mappings": "$button_mappings",
+        "toggle_default_state": "$toggle_tags",
+        "$button_mappings|default": [
+            {
+                "from_button_id": "button.menu_select",
+                "mapping_type": "pressed",
+                "to_button_id": "button.menu_select"
+            },
+            {
+                "from_button_id": "button.menu_ok",
+                "mapping_type": "focused",
+                "to_button_id": "button.menu_ok"
+            },
+            {
+                "from_button_id": "button.menu_left",
+                "ignored": "(not $enable_directional_toggling)",
+                "input_mode_condition": "gamepad_and_not_gaze",
+                "mapping_type": "pressed",
+                "to_button_id": "$toggle_off_button"
+            },
+            {
+                "from_button_id": "button.menu_right",
+                "ignored": "(not $enable_directional_toggling)",
+                "input_mode_condition": "gamepad_and_not_gaze",
+                "mapping_type": "pressed",
+                "to_button_id": "$toggle_on_button"
+            },
+            {
+                "ignored": "(not $enable_hover_event_mapping)",
+                "mapping_type": "pressed",
+                "to_button_id": "$toggle_hover_event_mapping"
+            }
+        ]
+    },
+    "toggle@Nova_client_toggles.panel": {
+        "type": "image",
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "layer": 1,
+        "texture": ".NC/textures/buttons/button_pressed"
+    },
+    "toggle_hover@Nova_client_toggles.panel": {
+        "type": "image",
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "layer": 1,
+        "texture": ".NC/textures/buttons/button_pressed_hover"
+    },
+    "toggle_unchecked@Nova_client_toggles.panel": {
+        "type": "image",
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "layer": 1,
+        "texture": ".NC/textures/buttons/button_default"
+    },
+    "toggle_unchecked_hover@Nova_client_toggles.panel": {
+        "type": "image",
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "layer": 1,
+        "texture": ".NC/textures/buttons/button_hover"
+    },
+    "Nova_client_toggle": {
+        "type": "panel",
+        "layer": 3,
+        "$toggle_view_binding_name|default": "this_toggle",
+        "$template_toggle|default": "Nova_client_toggles.mod_toggle",
+        "controls": [
+            {
+                "$toggle_view_binding_name@$template_toggle": {}
+            }
+        ]
+    },
+    "panel": {
+        "type": "panel",
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "layer": 30,
+        "$button_content|default": "Nova_client_toggles.button_text",
+        "controls": [
+            {
+                "button_content@$button_content": {
+                    "layer": 5
+                }
+            },
+            {
+                "button_texture@$button_texture": {
+                    "layer": 1
+                }
+            }
+        ]
+    },
+    "button_text": {
+        "type": "label",
+        "shadow": true,
+        "font_scale_factor": 1,
+        "size": [
+            "default",
+            "default"
+        ],
+        "color": [
+            0.75,
+            0.75,
+            0.75
+        ],
+        "text": "$button_text",
+        "bindings": [
+            {
+                "binding_name": "$button_text"
+            }
+        ]
+    }
+}

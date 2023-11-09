@@ -1,0 +1,103 @@
+{
+  "namespace": "Nova_client_modules_menu",
+  "modules_menu_button": {
+    "type": "panel",
+    "size": [
+      150,
+      "100%"
+    ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "controls": [
+      {
+        "open_modules@Nova_client_invisible_toggle.tab_toggles": {
+          "size": [
+            110,
+            20
+          ],
+          "offset": [
+            0,
+            -25
+          ],
+          "layer": 8,
+          "$toggle_view_binding_name": "modules_menu_toggle",
+          "$radio_toggle_group": true,
+          "$toggle_group_forced_index": 1,
+          "$button_text": ""
+        }
+      },
+      {
+        "emote@Nova_client_invisible_toggle.tab_toggles": {
+            "size": [
+                110,
+                20
+            ],
+            "offset": [
+                0,
+                0
+            ],
+            "layer": 8,
+            "$toggle_view_binding_name": "empty_panel_toggle",
+            "$radio_toggle_group": true,
+            "$toggle_group_forced_index": 0,
+            "$button_text": ""
+        }
+    }
+    ]
+  },
+  "modules_menu": {
+    "type": "panel",
+    "layer": 4,
+    "size": [
+      250,
+      250
+    ],
+    "bindings": [
+      {
+          "binding_type": "view",
+          "source_control_name": "modules_menu_toggle",
+          "source_property_name": "#toggle_state",
+          "target_property_name": "#visible"
+      }
+  ],
+    "controls": [
+      {
+        "background_texture": {
+          "type": "image",
+          "texture": ".NC/textures/background/simple_bg",
+          "size": [
+            "100%",
+            "100%"
+          ],
+          "layer": 5
+        }
+      }
+    ]
+  },
+  "empty_panel": {
+    "type": "screen",
+      "size": [
+          "100%",
+          "100%"
+      ],
+      "bindings": [
+          {
+              "binding_type": "view",
+              "source_control_name": "empty_panel_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+          }
+      ]
+  },
+  "content": {
+    "type": "panel",
+    "controls": [
+      {
+        "modules_menu_button@Nova_client_modules_menu.modules_menu_button": {}
+      },
+      {
+        "modules_menu@Nova_client_modules_menu.modules_menu": {}
+      }
+    ]
+  }
+}

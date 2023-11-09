@@ -1,0 +1,49 @@
+          {
+            "achievements_button@Nova_client_button.invis_button": {
+              "size": [
+                75,
+                20
+              ],
+              "$pressed_button_name": "button.menu_achievements",
+              "$button_text": "menu.achievements",
+              "anchor_from": "bottom_middle",
+              "anchor_to": "bottom_middle",
+              "offset": [
+                20,
+                0
+              ]
+            }
+          },
+          {
+            "skins_button@Nova_client_button.invis_button": {
+              "size": [
+                75,
+                20
+              ],
+              "$pressed_button_name": "button.to_profile_screen",
+              "$button_text": "Skins",
+              "anchor_from": "bottom_middle",
+              "anchor_to": "bottom_middle"
+            }
+          },
+          {
+            "fb_button@Nova_client_button.invis_button": {
+              "size": [
+                75,
+                20
+              ],
+              "$pressed_button_name": "button.menu_open_uri",
+              "$button_text": "Feedback",
+              "property_bag": {
+                "#hyperlink": "https://aka.ms/minecraftfb"
+              },
+              "anchor_from": "bottom_middle",
+              "anchor_to": "bottom_middle",
+              "bindings": [
+                {
+                  "binding_type": "collection_details",
+                  "binding_collection_name": "players_collection"
+                }
+              ]
+            }
+          }

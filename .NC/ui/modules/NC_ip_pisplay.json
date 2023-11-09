@@ -1,0 +1,236 @@
+{
+    "namespace": "pvp_ip",
+    "content@pvp_ip.mod": {
+      "anchor_from": "bottom_right",
+      "anchor_to": "bottom_right",
+      "layer": 0,
+      "offset": [
+        3,
+        -3
+      ],
+      "bindings": [
+        {
+          "binding_type": "view",
+          "source_control_name": "ip_display",
+          "source_property_name": "(not #toggle_state)",
+          "target_property_name": "#visible"
+        }
+      ]
+    },
+    "mod": {
+      "type": "image",
+      "size": [
+        "100%c + 5px",
+        12
+      ],
+      "texture": "textures/ui/hud_tip_text_background",
+      "alpha": 0.5,
+      "controls": [
+        {
+          "unknown": {
+            "type": "panel",
+            "ignored": "$is_on_3p_server",
+            "size": [
+              "100%c",
+              15
+            ],
+            "bindings": [
+              {
+                "binding_name": "#player_list_title"
+              },
+              {
+                "binding_type": "view",
+                "source_property_name": "((#player_list_title - ('Hive Games') - ('CubeCraft Games') - ('Zeqa Network') - ('NetherGames Network') - ('Pixel Paradise')  - ('Galaxite') - ('Lifeboat Network') - ('Mineville City') = #player_list_title) or (#player_list_title = '')",
+                "target_property_name": "#visible"
+              }
+            ],
+            "controls": [
+              {
+                "text": {
+                  "type": "label",
+                  "layer": 1,
+                  "font_type": "default",
+                  "text": "§4invalid ip",
+                  "shadow": true,
+                  "font_scale_factor": 0.6666,
+                  "text_alignment": "right",
+                  "anchor_from": "right_middle",
+                  "anchor_to": "right_middle"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "hive": {
+            "type": "panel",
+            "size": [
+              "100%c",
+              15
+            ],
+            "bindings": [
+              {
+                "binding_name": "#player_list_title"
+              },
+              {
+                "binding_type": "view",
+                "source_property_name": "(#player_list_title - ('Hive Games')) = not #player_list_title",
+                "target_property_name": "#visible"
+              }
+            ],
+            "controls": [
+              {
+                "text": {
+                  "type": "label",
+                  "layer": 1,
+                  "font_type": "default",
+                  "text": "IP: geo.§6hivebedrock§f.network",
+                  "font_scale_factor": 0.6666,
+                  "shadow": true,
+                  "text_alignment": "right",
+                  "anchor_from": "right_middle",
+                  "anchor_to": "right_middle"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "cubecraft": {
+            "type": "panel",
+            "size": [
+              "100%c",
+              15
+            ],
+            "bindings": [
+              {
+                "binding_name": "#player_list_title"
+              },
+              {
+                "binding_type": "view",
+                "source_property_name": "(#player_list_title - ('CubeCraft Games')) = not #player_list_title",
+                "target_property_name": "#visible"
+              }
+            ],
+            "controls": [
+              {
+                "text": {
+                  "type": "label",
+                  "layer": 1,
+                  "font_type": "default",
+                  "text": "IP: play.§bcubecraft§f.net",
+                  "font_scale_factor": 0.6666,
+                  "shadow": true,
+                  "text_alignment": "right",
+                  "anchor_from": "right_middle",
+                  "anchor_to": "right_middle"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "galaxite": {
+            "type": "panel",
+            "size": [
+              "100%c",
+              15
+            ],
+            "bindings": [
+              {
+                "binding_name": "#player_list_title"
+              },
+              {
+                "binding_type": "view",
+                "source_property_name": "(#player_list_title - ('Galaxite')) = not #player_list_title",
+                "target_property_name": "#visible"
+              }
+            ],
+            "controls": [
+              {
+                "text": {
+                  "type": "label",
+                  "layer": 1,
+                  "font_type": "default",
+                  "text": "IP: play.§5galaxite§f.net",
+                  "font_scale_factor": 0.6666,
+                  "shadow": true,
+                  "text_alignment": "right",
+                  "anchor_from": "right_middle",
+                  "anchor_to": "right_middle"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "mineville": {
+            "type": "panel",
+            "size": [
+              "100%c",
+              15
+            ],
+            "bindings": [
+              {
+                "binding_name": "#player_list_title"
+              },
+              {
+                "binding_type": "view",
+                "source_property_name": "(#player_list_title - ('Mineville City')) = not #player_list_title",
+                "target_property_name": "#visible"
+              }
+            ],
+            "controls": [
+              {
+                "text": {
+                  "type": "label",
+                  "layer": 1,
+                  "font_type": "default",
+                  "text": "IP: play.§dinpvp§f.net",
+                  "font_scale_factor": 0.6666,
+                  "shadow": true,
+                  "text_alignment": "right",
+                  "anchor_from": "right_middle",
+                  "anchor_to": "right_middle"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "lifeboat": {
+            "type": "panel",
+            "size": [
+              "100%c",
+              15
+            ],
+            "bindings": [
+              {
+                "binding_name": "#player_list_title"
+              },
+              {
+                "binding_type": "view",
+                "source_property_name": "(#player_list_title - ('Lifeboat Network')) = not #player_list_title",
+                "target_property_name": "#visible"
+              }
+            ],
+            "controls": [
+              {
+                "text": {
+                  "type": "label",
+                  "layer": 1,
+                  "font_type": "default",
+                  "text": "IP: mco.§4lbsg§f.net",
+                  "font_scale_factor": 0.6666,
+                  "shadow": true,
+                  "text_alignment": "right",
+                  "anchor_from": "right_middle",
+                  "anchor_to": "right_middle"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }

@@ -1,0 +1,135 @@
+{
+  "namespace": "Nova_client_emote_screen",
+  "content": {
+      "size": [
+          "100%",
+          "100%"
+      ],
+      "type": "panel",
+      "layer": 20,
+      "controls": [
+          {
+              "buttons@Nova_client_emote_screen.main": {}
+          },
+          {
+              "random@Nova_client_emote_screen.blank": {}
+          },
+          {
+              "panel_emote@persona.emote_default": {
+                  "bindings": [
+                      {
+                          "binding_type": "view",
+                          "source_control_name": "emote_panel",
+                          "source_property_name": "#toggle_state",
+                          "target_property_name": "#visible"
+                      }
+                  ]
+              }
+          }
+      ]
+  },
+  "main": {
+      "type": "image",
+      "texture": ".NC/textures/background/simple_bg",
+      "anchor_from": "top_left",
+      "anchor_to": "top_left",
+      "size": [
+          150,
+          "100%"
+      ],
+      "controls": [
+          {
+              "title": {
+                  "type": "image",
+                  "texture": "textures/ui/title",
+                  "layer": 1,
+                  "offset": [
+                      0,
+                      -100
+                  ],
+                  "size": [
+                      135,
+                      50
+                  ]
+              }
+          },
+          {
+              "modules@Nova_client_toggles.tab_toggles": {
+                  "size": [
+                      110,
+                      20
+                  ],
+                  "offset": [
+                      0,
+                      -25
+                  ],
+                  "$toggle_view_binding_name": "mod_screen",
+                  "$radio_toggle_group": true,
+                  "$toggle_group_forced_index": 1,
+                  "$button_text": "Modules"
+              }
+          },
+          {
+              "emote@Nova_client_toggles.tab_toggles": {
+                  "size": [
+                      110,
+                      20
+                  ],
+                  "offset": [
+                      0,
+                      0
+                  ],
+                  "$toggle_view_binding_name": "emote_panel",
+                  "$radio_toggle_group": true,
+                  "$toggle_group_forced_index": 0,
+                  "$button_text": "Emotes"
+              }
+          },
+          {
+              "adjust@Nova_client_toggles.tab_toggles": {
+                  "size": [
+                      110,
+                      20
+                  ],
+                  "offset": [
+                      0,
+                      25
+                  ],
+                  "$toggle_view_binding_name": "adjust_screen",
+                  "$radio_toggle_group": true,
+                  "$toggle_group_forced_index": 2,
+                  "$button_text": "Adjust"
+              }
+          },
+          {
+            "exit@Nova_client_button.oer_ui_button": {
+                "size": [
+                    110,
+                    20
+                ],
+                "offset": [
+                    0,
+                    50
+                ],
+                "$pressed_button_name": "button.menu_exit",
+                "$button_text": "Exit"
+            }
+        }
+      ]
+  },
+  "blank": {
+      "type": "screen",
+      "size": [
+          "100%",
+          "100%"
+      ],
+      "bindings": [
+          {
+              "binding_type": "view",
+              "source_control_name": "adjust_screen",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+          }
+      ]
+  }
+}

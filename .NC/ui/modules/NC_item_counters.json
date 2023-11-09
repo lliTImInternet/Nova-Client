@@ -1,0 +1,700 @@
+{
+    "namespace": "pvp_counters",
+    "biggoytest": {
+            "type": "image",
+            "texture": "textures/ui/hud_tip_text_background",
+            "alpha": 0.6,
+            "size": [
+              "100%cm + 5px",
+              "100%cm + 5px"
+            ],
+            "controls": [
+              {
+                "children_element": {
+                  "type": "stack_panel",
+                  "orientation": "horizontal",
+                  "size": [
+                    "100%c",
+                    "100%cm"
+                  ],
+                  "$item_id": 568,
+                  "$renderer_size": [
+                    12,
+                    12
+                  ],
+                  "controls": [
+                    {
+                      "itemRenderer@inventory_item_renderer": {
+                        "layer": 3
+                      }
+                    },
+                    {
+                      "itemCount@get_total_item_count": {
+                        "layer": 3
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+    "content": {
+      "type": "stack_panel",
+      "orientation": "horizontal",
+      "offset": [
+        0,
+        "80%"
+      ],
+      "layer": 3,
+      "controls": [
+        {
+          "arrows_counter": {
+            "type": "image",
+            "texture": "textures/ui/hud_tip_text_background",
+            "alpha": 0.6,
+            "size": [
+              "100%cm + 5px",
+              "100%cm + 5px"
+            ],
+            "bindings": [
+              {
+                "binding_type": "view",
+                "source_control_name": "arrow_counter",
+                "source_property_name": "(not #toggle_state)",
+                "target_property_name": "#visible"
+              }
+            ],
+            "controls": [
+              {
+                "children_element": {
+                  "type": "stack_panel",
+                  "size": [
+                    "100%c",
+                    "100%cm"
+                  ],
+                  "orientation": "horizontal",
+                  "$item_id": 303,
+                  "$renderer_size": [
+                    12,
+                    12
+                  ],
+                  "controls": [
+                    {
+                      "itemRenderer@inventory_item_renderer": {
+                        "layer": 3
+                      }
+                    },
+                    {
+                      "itemCount@get_total_item_count": {
+                        "layer": 3
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "spacer": {
+            "type": "panel",
+            "size": [
+              2,
+              2
+            ]
+          }
+        },
+        {
+          "potions_counter@pvp_counters.biggoytest": {
+            "bindings": [
+              {
+                "binding_type": "view",
+                "source_control_name": "potion_counter",
+                "source_property_name": "(not #toggle_state)",
+                "target_property_name": "#visible"
+              }
+            ]
+          }
+        },
+        {
+          "spacer": {
+            "type": "panel",
+            "size": [
+              2,
+              2
+            ]
+          }
+        },
+        {
+          "totems_counter": {
+            "type": "image",
+            "texture": "textures/ui/hud_tip_text_background",
+            "alpha": 0.6,
+            "size": [
+              "100%cm + 5px",
+              "100%cm + 5px"
+            ],
+            "bindings": [
+              {
+                "binding_type": "view",
+                "source_control_name": "totem_counter",
+                "source_property_name": "(not #toggle_state)",
+                "target_property_name": "#visible"
+              }
+            ],
+            "controls": [
+              {
+                "children_element": {
+                  "type": "stack_panel",
+                  "orientation": "horizontal",
+                  "size": [
+                    "100%c",
+                    "100%cm"
+                  ],
+                  "$item_id": 575,
+                  "$renderer_size": [
+                    12,
+                    12
+                  ],
+                  "controls": [
+                    {
+                      "itemRenderer@inventory_item_renderer": {
+                        "layer": 3
+                      }
+                    },
+                    {
+                      "itemCount@get_total_item_count": {
+                        "layer": 3
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "inventory_item_amount": {
+      "size": [
+        0,
+        0
+      ],
+      "type": "panel",
+      "$item_id|default": 1,
+      "bindings": [
+        {
+          "binding_name": "#item_id_aux",
+          "binding_type": "collection",
+          "binding_collection_name": "hotbar_items"
+        },
+        {
+          "binding_name": "#inventory_stack_count",
+          "binding_type": "collection",
+          "binding_collection_name": "hotbar_items"
+        },
+        {
+          "binding_type": "view",
+          "source_property_name": "(((65536 * $item_id) = ((#item_id_aux / 65536 + 0) * 65536)) + 0)",
+          "target_property_name": "#available"
+        },
+        {
+          "binding_type": "view",
+          "source_property_name": "(((§z + #inventory_stack_count - §z) + ((((§z + #inventory_stack_count) = §z) + 0) * 1))",
+          "target_property_name": "#real_item_count"
+        },
+        {
+          "binding_type": "view",
+          "source_property_name": "(#available * #real_item_count)",
+          "target_property_name": "#flexyus_count"
+        }
+      ]
+    },
+    "get_total_item_count": {
+      "type": "stack_panel",
+      "size": [
+        "100%cm",
+        "100%cm"
+      ],
+      "$item_count_element|default": "inventory_item_amount",
+      "collection_name": "hotbar_items",
+      "controls": [
+        {
+          "count_slot_0@$item_count_element": {
+            "collection_index": 0
+          }
+        },
+        {
+          "count_slot_1@$item_count_element": {
+            "collection_index": 1
+          }
+        },
+        {
+          "count_slot_2@$item_count_element": {
+            "collection_index": 2
+          }
+        },
+        {
+          "count_slot_3@$item_count_element": {
+            "collection_index": 3
+          }
+        },
+        {
+          "count_slot_4@$item_count_element": {
+            "collection_index": 4
+          }
+        },
+        {
+          "count_slot_5@$item_count_element": {
+            "collection_index": 5
+          }
+        },
+        {
+          "count_slot_6@$item_count_element": {
+            "collection_index": 6
+          }
+        },
+        {
+          "count_slot_7@$item_count_element": {
+            "collection_index": 7
+          }
+        },
+        {
+          "count_slot_8@$item_count_element": {
+            "collection_index": 8
+          }
+        },
+        {
+          "count_slot_9@$item_count_element": {
+            "collection_index": 9
+          }
+        },
+        {
+          "count_slot_10@$item_count_element": {
+            "collection_index": 10
+          }
+        },
+        {
+          "count_slot_11@$item_count_element": {
+            "collection_index": 11
+          }
+        },
+        {
+          "count_slot_12@$item_count_element": {
+            "collection_index": 12
+          }
+        },
+        {
+          "count_slot_13@$item_count_element": {
+            "collection_index": 13
+          }
+        },
+        {
+          "count_slot_14@$item_count_element": {
+            "collection_index": 14
+          }
+        },
+        {
+          "count_slot_15@$item_count_element": {
+            "collection_index": 15
+          }
+        },
+        {
+          "count_slot_16@$item_count_element": {
+            "collection_index": 16
+          }
+        },
+        {
+          "count_slot_17@$item_count_element": {
+            "collection_index": 17
+          }
+        },
+        {
+          "count_slot_18@$item_count_element": {
+            "collection_index": 18
+          }
+        },
+        {
+          "count_slot_19@$item_count_element": {
+            "collection_index": 19
+          }
+        },
+        {
+          "count_slot_20@$item_count_element": {
+            "collection_index": 20
+          }
+        },
+        {
+          "count_slot_21@$item_count_element": {
+            "collection_index": 21
+          }
+        },
+        {
+          "count_slot_22@$item_count_element": {
+            "collection_index": 22
+          }
+        },
+        {
+          "count_slot_23@$item_count_element": {
+            "collection_index": 23
+          }
+        },
+        {
+          "count_slot_24@$item_count_element": {
+            "collection_index": 24
+          }
+        },
+        {
+          "count_slot_25@$item_count_element": {
+            "collection_index": 25
+          }
+        },
+        {
+          "count_slot_26@$item_count_element": {
+            "collection_index": 26
+          }
+        },
+        {
+          "count_slot_27@$item_count_element": {
+            "collection_index": 27
+          }
+        },
+        {
+          "count_slot_28@$item_count_element": {
+            "collection_index": 28
+          }
+        },
+        {
+          "count_slot_29@$item_count_element": {
+            "collection_index": 29
+          }
+        },
+        {
+          "count_slot_30@$item_count_element": {
+            "collection_index": 30
+          }
+        },
+        {
+          "count_slot_31@$item_count_element": {
+            "collection_index": 31
+          }
+        },
+        {
+          "count_slot_32@$item_count_element": {
+            "collection_index": 32
+          }
+        },
+        {
+          "count_slot_33@$item_count_element": {
+            "collection_index": 33
+          }
+        },
+        {
+          "count_slot_34@$item_count_element": {
+            "collection_index": 34
+          }
+        },
+        {
+          "count_slot_35@$item_count_element": {
+            "collection_index": 35
+          }
+        },
+        {
+          "renderer_item_count": {
+            "type": "label",
+            "size": [
+              "default",
+              "default"
+            ],
+            "offset": [
+              0,
+              2
+            ],
+            "text": "#text",
+            "bindings": [
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_0",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_0"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_1",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_1"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_2",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_2"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_3",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_3"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_4",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_4"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_5",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_5"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_6",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_6"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_7",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_7"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_8",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_8"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_9",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_9"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_10",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_10"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_11",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_11"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_12",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_12"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_13",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_13"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_14",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_14"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_15",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_15"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_16",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_16"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_17",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_17"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_18",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_18"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_19",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_19"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_20",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_20"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_21",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_21"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_22",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_22"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_23",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_23"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_24",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_24"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_25",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_25"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_26",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_26"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_27",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_27"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_28",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_28"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_29",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_29"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_30",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_30"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_31",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_31"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_32",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_32"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_33",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_33"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_34",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_34"
+              },
+              {
+                "binding_type": "view",
+                "source_control_name": "count_slot_35",
+                "resolve_sibling_scope": true,
+                "source_property_name": "#flexyus_count",
+                "target_property_name": "#slot_35"
+              },
+              {
+                "binding_type": "view",
+                "source_property_name": "(§z + (#slot_0 + #slot_1 + #slot_2 + #slot_3 + #slot_4 + #slot_5 + #slot_6 + #slot_7 + #slot_8 + #slot_9 + #slot_10 + #slot_11 + #slot_12 + #slot_13 + #slot_14 + #slot_15 + #slot_16 + #slot_17 + #slot_18 + #slot_19 + #slot_20 + #slot_21 + #slot_22 + #slot_23 + #slot_24 + #slot_25 + #slot_26 + #slot_27 + #slot_28 + #slot_29 + #slot_30 + #slot_31 + #slot_32 + #slot_33 + #slot_34 + #slot_35) + §zx)",
+                "target_property_name": "#text"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "inventory_item_renderer": {
+      "type": "custom",
+      "property_bag": "$viewItemMode",
+      "renderer": "inventory_item_renderer",
+      "size": "$renderer_size",
+      "$viewItemMode|default": {
+        "#item_id_aux": "($item_id * 65536 + $item_data_value)"
+      },
+      "variables": [
+        {
+          "requires": "($item_id < 0)",
+          "$viewItemMode|default": {
+            "#item_id_aux": "($item_id * 65536 - $item_data_value)"
+          }
+        }
+      ],
+      "$renderer_size|default": [
+        24,
+        24
+      ],
+      "$item_id|default": 1,
+      "$item_data_value|default": 0
+    }
+  }

@@ -1,0 +1,12 @@
+{
+  "ui_defs": [
+      ".NC/ui/button/NC_button.json",
+      ".NC/ui/screen/emote/NC_emote_screen.json",
+      ".NC/ui/screen/hud/NC_modules_menu.json",
+      ".NC/ui/screen/start/NC_start.json",
+      ".NC/ui/toggle/NC_toggle_invisible.json",
+      ".NC/ui/toggle/NC_toggle.json",
+      ".NC/ui/NC_list.json",
+      ".NC/ui/NC_textures.json"
+  ]
+}

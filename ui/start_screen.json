@@ -1,0 +1,7 @@
+{
+        "namespace": "start",
+        "start_screen": {
+            "$screen_content": "Nova_client_start.content",
+            "$screen_bg_content": "Nova_client_textures.bg"
+        }
+    }

@@ -1,0 +1,36 @@
+{
+    "namespace": "Nova_client_textures",
+      "bg": {
+        "type": "image",
+        "anchor_from": "center",
+        "anchor_to": "center",
+        "layer": -1,
+        "fill": true,
+        "offset": [
+          0,
+          0
+        ],
+        "texture": ".NC/textures/background/main",
+        "size": [
+          "100%",
+          "100%"
+        ]
+      },
+      "invis": {
+        "type": "image",
+        "anchor_from": "center",
+        "anchor_to": "center",
+        "layer": -1,
+        "alpha": 0,
+        "fill": true,
+        "offset": [
+          0,
+          0
+        ],
+        "texture": ".NC/textures/background/main",
+        "size": [
+          "100%",
+          "100%"
+        ]
+      }
+  }

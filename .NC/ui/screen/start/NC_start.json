@@ -1,0 +1,147 @@
+{
+  "namespace": "Nova_client_start",
+  "play_and_title": {
+    "type": "panel",
+    "size": [
+      "100%",
+      "100%"
+    ],
+    "layer": 0,
+    "controls": [
+      {
+        "title": {
+          "type": "image",
+          "texture": "textures/ui/title",
+          "layer": 1,
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "offset": [
+            0,
+            0
+          ],
+          "size": [
+            275,
+            50
+          ]
+        }
+      },
+      {
+        "black": {
+          "type": "image",
+          "texture": "textures/ui/Black",
+          "alpha": 0.5,
+          "layer": 0,
+          "size": [
+            "100%",
+            "100%"
+          ]
+        }
+      },
+      {
+        "background": {
+          "type": "image",
+          "texture": ".NC/textures/background/simple_bg",
+          "layer": 0,
+          "size": [
+            "100%",
+            35
+          ],
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle"
+        }
+      },
+      {
+        "play_button@Nova_client_button.green_button": {
+          "size": [
+            110,
+            30
+          ],
+          "offset": [
+            0,
+            -25
+          ],
+          "$pressed_button_name": "button.menu_play",
+          "$button_text": "menu.play",
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle"
+        }
+      }
+    ]
+  },
+  "test": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "controls": [
+      {
+        "store_button@Nova_client_button.invis_button": {
+          "size": [
+            75,
+            20
+          ],
+          "$pressed_button_name": "button.menu_store",
+          "$button_text": "menu.store"
+        }
+      },
+      {
+        "settings_button@Nova_client_button.invis_button": {
+          "size": [
+            75,
+            20
+          ],
+          "$pressed_button_name": "button.menu_settings",
+          "$button_text": "menu.settings"
+        }
+      }
+    ]
+  },
+  "version": {
+    "type": "label",
+    "text": "$version_text",
+    "$version_text": "#version",
+    "anchor_from": "bottom_right",
+    "anchor_to": "bottom_right",
+    "$textmatches": "($version_text = 'v1.20.41')",
+    "size": [
+        "default",
+        20
+    ],
+    "max_size": [
+        "100%",
+        "100%"
+    ],
+    "offset": [
+        0,
+        0
+    ],
+    "bindings": [
+        {
+            "binding_name": "#version"
+        }
+    ],
+    "variables": [
+      {
+        "requires": "$textmatches"
+      }
+    ]
+},
+  "content": {
+    "type": "panel",
+    "controls": [
+      {
+        "play_and_title@Nova_client_start.play_and_title": {}
+      },
+      {
+        "test@Nova_client_start.test": {}
+      },
+      {
+        "version@Nova_client_start.version": {}
+      }
+    ]
+  },
+  "full_screen": {
+    "type": "panel",
+    "controls": []
+  }
+}

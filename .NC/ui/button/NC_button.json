@@ -1,0 +1,152 @@
+{
+    "namespace": "Nova_client_button",
+    "invis_button@common.button": {
+        "locked_control": "locked",
+        "controls": [
+            {
+                "default@Nova_client_button.default": {
+                    "$default_texture": ".NC/textures/buttons/green",
+                    "alpha": 0.0,
+                    "$font_type": "MinecraftTen"
+                }
+            },
+            {
+                "hover@Nova_client_button.hover": {
+                    "$hover_texture": ".NC/textures/buttons/green",
+                    "alpha": 0.0,
+                    "$font_type": "MinecraftTen"
+                }
+            },
+            {
+                "pressed@Nova_client_button.pressed": {
+                    "$pressed_texture": ".NC/textures/buttons/green",
+                    "alpha": 0.0,
+                    "$font_type": "MinecraftTen"
+                }
+            },
+            {
+                "locked@Nova_client_button.locked": {
+                    "$locked_texture": ".NC/textures/buttons/green",
+                    "alpha": 0.0,
+                    "$font_type": "MinecraftTen"
+                }
+            }
+        ]
+    },
+    "green_button@common.button": {
+        "locked_control": "locked",
+        "controls": [
+            {
+                "default@Nova_client_button.default": {
+                    "$default_texture": ".NC/textures/buttons/green",
+                    "$font_type": "MinecraftTen"
+                }
+            },
+            {
+                "hover@Nova_client_button.hover": {
+                    "$hover_texture": ".NC/textures/buttons/green_hover",
+                    "$font_type": "MinecraftTen"
+                }
+            },
+            {
+                "pressed@Nova_client_button.pressed": {
+                    "$pressed_texture": ".NC/textures/buttons/green_hover",
+                    "$font_type": "MinecraftTen"
+                }
+            },
+            {
+                "locked@hackinNova_client_buttong_button.locked": {
+                    "$locked_texture": ".NC/textures/buttons/green_hover",
+                    "$font_type": "MinecraftTen"
+                }
+            }
+        ]
+    },
+    "oer_ui_button@common.button": {
+        "locked_control": "locked",
+        "controls": [
+            {
+                "default@Nova_client_button.default": {
+                    "$default_texture": ".NC/textures/buttons/button_default"
+                }
+            },
+            {
+                "hover@Nova_client_button.hover": {
+                    "$hover_texture": ".NC/textures/buttons/button_hover"
+                }
+            },
+            {
+                "pressed@Nova_client_button.pressed": {
+                    "$pressed_texture": ".NC/textures/buttons/button_pressed"
+                }
+            },
+            {
+                "locked@hackinNova_client_buttong_button.locked": {
+                    "$locked_texture": ".NC/textures/buttons/button_pressed_hover"
+                }
+            }
+        ]
+    },
+    "default@Nova_client_button.button_content": {
+        "$default": true,
+        "$text_color": [
+            1,
+            1,
+            1
+        ],
+        "texture": "$default_texture"
+    },
+    "hover@Nova_client_button.button_content": {
+        "$hover": true,
+        "$text_color": [
+            1,
+            1,
+            1
+        ],
+        "texture": "$hover_texture"
+    },
+    "pressed@Nova_client_button.button_content": {
+        "$pressed": true,
+        "$text_color": [
+            1,
+            1,
+            1
+        ],
+        "texture": "$pressed_texture"
+    },
+    "button_content": {
+        "type": "image",
+        "$default|default": false,
+        "$hover|default": false,
+        "$pressed|defaullt": false,
+        "$custom_content|default": "",
+        "$button_bindings|default": [],
+        "controls": [
+            {
+                "custom_content@$custom_content": {}
+            },
+            {
+                "label@Nova_client_button.button_label": {
+                    "visible": "($custom_content = )"
+                }
+            }
+        ]
+    },
+    "button_label": {
+        "type": "label",
+        "shadow": true,
+        "font_scale_factor": 1,
+        "font_type": "$font_type",
+        "size": [
+            "default",
+            "default"
+        ],
+        "color": "$text_color",
+        "$text_color|default": [
+            1,
+            1,
+            1
+        ],
+        "text": "$button_text"
+    }
+}

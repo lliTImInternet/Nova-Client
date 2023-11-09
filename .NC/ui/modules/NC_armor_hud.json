@@ -1,0 +1,40 @@
+{
+  "namespace": "pvp_armor",
+  "armorhud": {
+    "type": "custom",
+    "layer": 10,
+    "renderer": "live_player_renderer",
+    "size": [
+      14,
+      14
+    ]
+  },
+  "content@pvp_armor.armorhud": {
+    "anchor_from": "bottom_right",
+    "anchor_to": "bottom_right",
+    "offset": [
+      0,
+      450
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "armor_hud",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "background": {
+          "type": "image",
+          "texture": "textures/ui/hud_tip_text_background",
+          "size": [
+            "100%",
+            "100%"
+          ]
+        }
+      }
+    ]
+  }
+}

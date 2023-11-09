@@ -1,0 +1,20 @@
+{
+    "namespace": "Nova_client_module_list",
+    "basis": {
+        "type": "content",
+        "controls": [
+            {
+                "@bow_indicator.content": {}
+            },
+            {
+                "@pvp_armor.content": {}
+            },
+            {
+                "@pvp_counters.content": {}
+            },
+            {
+                "@pvp_ip.content": {}
+            }
+        ]
+    }
+}
