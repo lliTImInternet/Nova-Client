@@ -10,7 +10,7 @@
     <a href="https://img.shields.io/github/downloads/lliTImInternet/Nova-Client/total?color=blue"></a>
   </p>
   <p>
-    <h1>Project64<h1>
+    <h1>Nova Client<h1>
   </p>
 </div>
 <br>
